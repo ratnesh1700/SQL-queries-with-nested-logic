@@ -1,0 +1,17 @@
+query is used by the outer query for further processing.
+
+Independent (Non-correlated) Nested Queries: These are executed first, completely independent of the outer query, and their result is then used by the outer query. They are typically written using operators such as IN, NOT IN, ALL, and ANY.
+
+Correlated Nested Queries: Here, the inner query references columns from the outer query and runs once for each row processed by the outer query, making them potentially less efficient for large datasets.
+
+Syntax and Examples
+The general syntax for a nested SQL query is:
+
+sql
+SELECT column1, column2
+FROM table1
+WHERE column1 IN (
+  SELECT column1
+  FROM table2
+  WHERE condition
+);
