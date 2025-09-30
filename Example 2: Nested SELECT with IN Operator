@@ -1,0 +1,9 @@
+List employee names who have won an award:
+
+sql
+SELECT name
+FROM employees
+WHERE id IN (
+  SELECT employee_id
+  FROM awards
+);
