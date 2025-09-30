@@ -1,0 +1,9 @@
+Find names and advisors of students older than the average age:
+
+sql
+SELECT s.Name, g.Advisor
+FROM students s
+JOIN grades g ON s.Grade = g.Grade
+WHERE s.Age > (
+  SELECT AVG(Age) FROM students
+);
