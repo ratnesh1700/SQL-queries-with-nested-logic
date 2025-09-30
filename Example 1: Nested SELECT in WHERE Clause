@@ -1,0 +1,8 @@
+Find all students in the same grade as 'John':
+
+sql
+SELECT Name
+FROM students
+WHERE Grade = (
+  SELECT Grade FROM students WHERE Name = 'John'
+);
